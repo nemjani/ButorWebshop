@@ -1,0 +1,18 @@
+<div class="main_component">
+    <div class="div-flex">
+        <h1>valami köszöntő szöveg</h1>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <div><label for="email">Email: </label><input id="email" type="text" formControlName="email" autocomplete="off"></div>
+            <div><label for="password">Password: </label><input id="password" type="password" formControlName="password" autocomplete="off"></div>
+            <div><label for="rePassword">Confirm password: </label><input id="rePassword" type="password" formControlName="rePassword" autocomplete="off"> </div>
+            <div formGroupName="name">
+                <div><label for="firstName">First name: </label><input id="firstName" type="text" formControlName="firstName"></div>
+                <div><label for="lastName">Last name: </label><input id="lastName" type="text" formControlName="lastName"></div>
+            </div>
+            <div>
+                <button type="submit">Register</button>
+                <button (click)="goBack()">Back</button>
+            </div>
+        </form>
+    </div>
+</div>

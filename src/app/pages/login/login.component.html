@@ -1,0 +1,9 @@
+<div class="main_component">
+    <h1>valami köszöntő szöveg</h1>
+    <span><label for="email">Email: </label><input id="email" type="text" [formControl]="email" autocomplete="off"></span>
+    <span><label for="password">Password: </label><input id="password" type="password" [formControl]="password" autocomplete="off"></span>
+    <span>
+        <button (click)="login()">Login</button>
+        <button [routerLink]="'/signup'">Sign Up</button>
+    </span>
+</div>
