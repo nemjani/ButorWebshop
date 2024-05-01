@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webfelj-2024": {
+      "hosting": {
+        "butor-webshop": [
+          "webfelj-2024"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webfelj-2024"
+  }
+}

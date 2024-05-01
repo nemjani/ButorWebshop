@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "butor-webshop",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

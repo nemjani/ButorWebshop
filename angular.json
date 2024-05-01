@@ -103,6 +103,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "butor-webshop:build:production",
+              "serveTarget": "butor-webshop:serve:production"
+            },
+            "development": {
+              "buildTarget": "butor-webshop:build:development",
+              "serveTarget": "butor-webshop:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

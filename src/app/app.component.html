@@ -1,6 +1,6 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav>
-        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" (onCloseSidenav)="onClose(sidenav)"></app-menu>
+        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" (onCloseSidenav)="onClose(sidenav)" [loggedInUser]="loggedInUser" (onLogout)="logout($event)"></app-menu>
         <!--                                                                                         $event,  -->
     </mat-sidenav>
     <!-- <mat-sidenav-content class="custom-background"> -->
@@ -17,7 +17,8 @@
                     <li><a routerLink="/main">Home</a></li>
                     <li><a routerLink="/product">Product</a></li>
                     <li><a routerLink="/contact">Contact</a></li>
-                    <li><a routerLink="/login">Login</a></li>
+                    <li *ngIf="!(loggedInUser)"><a routerLink="/login">Login</a></li>
+                    <li *ngIf="loggedInUser"><a routerLink="/login" (click)="logout()">Logout</a></li>
                     <li><a routerLink="/signup">Register</a></li>
                 </ul>
             </div>
