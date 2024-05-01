@@ -13,3 +13,21 @@
 form div {
     padding: 5px;
 }
+
+span {
+    padding: 5px;
+}
+
+.input-field {
+    width: 50%;
+}
+
+@media screen and (max-width: 500px) {
+    .input-field {
+        width: 100%;
+    }
+}
+
+button {
+    margin: 10px;
+}

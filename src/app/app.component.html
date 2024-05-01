@@ -1,20 +1,28 @@
-<app-menu (selectedPage)="changePage($event)" [currentPage]="page"></app-menu>
-<!-- <ng-container [ngSwitch]="page">
-    <ng-container *ngSwitchCase="'main'">
-        <div class="main_component">
-            <app-main></app-main>
-        </div>
-    </ng-container>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" (onCloseSidenav)="onClose(sidenav)"></app-menu>
+        <!--                                                                                         $event,  -->
+    </mat-sidenav>
+    <!-- <mat-sidenav-content class="custom-background"> -->
+    <mat-sidenav-content color="background">
+        <mat-toolbar color="accent" class="header-bar">
+            <div fxHide.gt-xs>
+                <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <div class="title">Bútor-Webshop</div>
+            <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+                <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+                    <li><a routerLink="/main">Home</a></li>
+                    <li><a routerLink="/product">Product</a></li>
+                    <li><a routerLink="/contact">Contact</a></li>
+                    <li><a routerLink="/login">Login</a></li>
+                    <li><a routerLink="/signup">Register</a></li>
+                </ul>
+            </div>
+        </mat-toolbar>
 
-    <ng-container *ngSwitchCase="'product'">
-        <app-product></app-product>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'contact'">
-        <app-contact>
-            <h1>ez egy fejléc</h1>
-        </app-contact>
-    </ng-container>
-</ng-container> -->
-
-<router-outlet><router-outlet/>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

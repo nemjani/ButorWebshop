@@ -1,24 +1,62 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FakeLoadingService } from '../../shared/services/fake-loading.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnDestroy {
 
   email = new FormControl('');
   password = new FormControl('');
 
-  constructor(private router: Router) {}
+  loadingSubscription?: Subscription;
+  loadingObservation?: Observable<boolean>;
 
-  login() {
-    if (this.email.value === 'test@gmail.com' && this.password.value === 'testpw') {
+  loading: boolean = false;
+
+  constructor(private router: Router, private loadingService: FakeLoadingService) { }
+
+  async login() {
+    this.loading = true;
+    //Promise
+    /*this.loadingService.loadingWithPromise(this.email.value!, this.password.value!).then((_: boolean) => {
       this.router.navigateByUrl('/main');
-    } else {
+    }).catch(error => {
       console.error('Incorrect email or password!');
-    }
+    }).finally(() => {
+      console.log('This is executed finally.');
+    });*/
+
+    //async-await
+    /*try {
+      const _ = await this.loadingService.loadingWithPromise(this.email.value!, this.password.value!)
+      this.router.navigateByUrl('/main');
+    } catch (error) {
+      console.error('Incorrect email or password!');
+    }*/
+
+    //Observable
+    this.loadingObservation = this.loadingService.loadingWithObservable(this.email.value!, this.password.value!)
+    this.loadingSubscription = this.loadingObservation.subscribe({
+      next: (data: boolean) => {
+        this.router.navigateByUrl('/main');
+        console.log(data);
+      }, error: (error) => {
+        console.error(error);
+        this.loading = false;
+      }, complete: () => {
+        console.log('finally');
+        this.loading = false;
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.loadingSubscription?.unsubscribe();
   }
 }

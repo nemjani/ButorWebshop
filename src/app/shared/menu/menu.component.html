@@ -1,7 +1,22 @@
-<select [(ngModel)]="currentPage" (change)="menuSwitch()">
-    <option value="login">Login</option>
-    <option value="signup">Register</option>
-    <option value="main">Main</option>
-    <option value="product">Product</option>
-    <option value="contact">Contact</option>
-</select>
+<mat-nav-list>
+    <a mat-list-item routerLink="/main" (click)="close(); onCloseSidenav.emit(true)">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+    </a>
+    <a mat-list-item routerLink="/product" (click)="close(); onCloseSidenav.emit(true)">
+        <mat-icon>chair</mat-icon>
+        <span>Product</span>
+    </a>
+    <a mat-list-item routerLink="/contact" (click)="close(); onCloseSidenav.emit(true)">
+        <mat-icon>supervised_user_circle</mat-icon>
+        <span>Contact</span>
+    </a>    
+    <a mat-list-item routerLink="/login" (click)="close(); onCloseSidenav.emit(true)">
+        <mat-icon>login</mat-icon>
+        <span>Login</span>
+    </a>
+    <a mat-list-item routerLink="/signup" (click)="close(); onCloseSidenav.emit(true)">
+        <mat-icon>app_registration</mat-icon>
+        <span>Register</span>
+    </a>
+</mat-nav-list>

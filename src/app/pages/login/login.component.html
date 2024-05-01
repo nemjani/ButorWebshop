@@ -1,9 +1,17 @@
+<span class="loading-indicator" *ngIf="loading">
+    <mat-spinner color="accent"></mat-spinner>
+</span>
+
 <div class="main_component">
     <h1>valami köszöntő szöveg</h1>
-    <span><label for="email">Email: </label><input id="email" type="text" [formControl]="email" autocomplete="off"></span>
-    <span><label for="password">Password: </label><input id="password" type="password" [formControl]="password" autocomplete="off"></span>
+    <div class="form-container">
+        <mat-form-field class="input-field"><mat-label for="email">Email: </mat-label><input matInput id="email" type="text" [formControl]="email" autocomplete="off"></mat-form-field>
+        <mat-form-field class="input-field"><mat-label for="password">Password: </mat-label><input matInput id="password" type="password" [formControl]="password" autocomplete="off"></mat-form-field>    
+    </div>
     <span>
-        <button (click)="login()">Login</button>
-        <button [routerLink]="'/signup'">Sign Up</button>
+        <button mat-raised-button color="accent" (click)="login()">Login</button>
+        <button mat-raised-button color="accent" [routerLink]="'/signup'">Sign Up</button>
     </span>
+    <!-- AsyncPipe -->
+    <!-- <p>{{loadingObservation | async}}</p> -->
 </div>

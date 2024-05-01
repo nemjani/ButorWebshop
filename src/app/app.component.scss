@@ -1,0 +1,31 @@
+.custom-background {
+    background-color: #e7efe7ec;
+}
+
+.title {
+    font-variant: small-caps;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-variant: small-caps;
+}
+
+a:hover, a:active {
+    color: rgb(112, 112, 112);
+    font-variant: small-caps;
+}
+
+.navigation-items {
+    list-style: none;
+    padding: 0px;
+}
+
+.header-bar {
+    height: 60px;
+}
+
+mat-sidenav {
+    width: 180px;
+}
