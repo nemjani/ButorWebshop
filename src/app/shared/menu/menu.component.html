@@ -11,6 +11,10 @@
         <mat-icon>supervised_user_circle</mat-icon>
         <span>Contact</span>
     </a>    
+    <a mat-list-item routerLink="/rating" (click)="close(); onCloseSidenav.emit(true)">
+        <mat-icon>star</mat-icon>
+        <span>Rating</span>
+    </a> 
     <a mat-list-item routerLink="/login" (click)="close(); onCloseSidenav.emit(true)" *ngIf="!loggedInUser">
         <mat-icon>login</mat-icon>
         <span>Login</span>
@@ -19,8 +23,8 @@
         <mat-icon>logout</mat-icon>
         <span>Logout</span>
     </a>
-    <a mat-list-item routerLink="/signup" (click)="close(); onCloseSidenav.emit(true)">
-        <mat-icon>app_registration</mat-icon>
+    <a mat-list-item routerLink="/signup" (click)="close(); onCloseSidenav.emit(true)" *ngIf="!loggedInUser">
+        <mat-icon>person_add</mat-icon>
         <span>Register</span>
-    </a>
+    </a>   
 </mat-nav-list>

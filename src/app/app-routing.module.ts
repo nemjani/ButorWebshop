@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuard } from './shared/services/auth.guard';
 
 //ez itt a lazy loading
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'product', 
-    loadChildren: () => import('./pages/product/product.module').then(m => m.ProductModule) 
+    loadChildren: () => import('./pages/product/product.module').then(m => m.ProductModule),
   },
   { 
     path: 'not-found', 
@@ -26,6 +27,11 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
   { path: 'signup', loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupModule) },
+  { 
+    path: 'rating', 
+    loadChildren: () => import('./pages/rating/rating.module').then(m => m.RatingModule), 
+    canActivate: [authGuard]
+  },
   {
     path: '**',
     redirectTo: '/not-found'

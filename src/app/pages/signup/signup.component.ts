@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -20,7 +21,7 @@ export class SignupComponent {
     })
   });
 
-  constructor(private location: Location, private authService: AuthService) {}
+  constructor(private location: Location, private authService: AuthService, private router: Router) {}
 
   onSubmit() {
     console.log(this.signUpForm.value);
@@ -31,8 +32,8 @@ export class SignupComponent {
     });
   }
 
-  goBack() {
-    this.location.back();
-  }
+  // goBack() {
+  //   this.router.navigateByUrl('/login');
+  // }
 
 }

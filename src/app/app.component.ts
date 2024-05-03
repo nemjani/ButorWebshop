@@ -33,10 +33,14 @@ export class AppComponent implements OnInit {
     });
     this.authService.isUserLoggedIn().subscribe(user => {
       console.log(user);
+
+      //itt baj van ha elmegyünk a regisztráláshoz és vissza akkor valami nem jó itt neki
       
       this.loggedInUser = user;
+      localStorage.setItem('user', JSON.stringify(this.loggedInUser));
     }, error => {
       console.error(error);
+      localStorage.setItem('user', JSON.stringify(null) as string);
     });
   }
 
