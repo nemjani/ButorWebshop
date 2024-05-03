@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { authGuard } from './shared/services/auth.guard';
+import { adminAuthGuard, authGuard } from './shared/services/auth.guard';
 
 //ez itt a lazy loading
 const routes: Routes = [
@@ -31,6 +31,11 @@ const routes: Routes = [
     path: 'rating', 
     loadChildren: () => import('./pages/rating/rating.module').then(m => m.RatingModule), 
     canActivate: [authGuard]
+  },
+  { 
+    path: 'admin', 
+    loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
+    canActivate: [adminAuthGuard] 
   },
   {
     path: '**',
