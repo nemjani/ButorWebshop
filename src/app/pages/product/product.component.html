@@ -1,3 +1,19 @@
-<div  class="main_component">
-    <h1>product</h1>
+<div class="main_component">
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let image of images">
+            <mat-card>
+                <div class="align-left">
+                    <mat-card-content>
+                        <img [src]="loadImage(image.image_url)">
+                    </mat-card-content>
+                </div>
+                <div class="align-right">
+                    <mat-card-content>
+                        <h1>{{ image.name }}</h1>
+                        <p><mat-icon>payments</mat-icon> {{ image.price }}Ft</p>
+                    </mat-card-content>
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
