@@ -10,8 +10,11 @@
                 <div class="align-right">
                     <mat-card-content>
                         <h1>{{ image.name }}</h1>
-                        <p><mat-icon>payments</mat-icon> {{ image.price }}Ft</p>
+                        <p><mat-icon class="dollar">payments</mat-icon> {{ image.price }}Ft</p>
                     </mat-card-content>
+                    <button mat-icon-button (click)="addItemToCart()">
+                        <mat-icon class="cart">shopping_cart</mat-icon>
+                    </button>
                 </div>
             </mat-card>
         </mat-grid-tile>

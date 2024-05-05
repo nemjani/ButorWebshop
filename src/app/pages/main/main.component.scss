@@ -1,11 +1,30 @@
 div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     text-align: center;
     height: 100%;
+    // background-size: cover;
 }
 
 .main_component {
     height: 100vh;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
+h1 {
+    font-size: 30px;
+    padding: 40px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
 }

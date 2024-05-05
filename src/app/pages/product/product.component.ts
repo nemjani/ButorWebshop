@@ -29,4 +29,8 @@ export class ProductComponent implements OnInit {
   loadImage(imagePath: string): string {
     return `assets\\${imagePath}`;
   }
+
+  addItemToCart() {
+    alert('Item added to cart');
+  }
 }

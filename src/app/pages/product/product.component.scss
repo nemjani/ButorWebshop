@@ -23,6 +23,14 @@ mat-card-content {
     margin: 0;
 }
 
+button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
 mat-icon {
     height: 80%;
     vertical-align: bottom;
@@ -39,9 +47,19 @@ mat-icon {
     float: right;
     margin: 4px;
     padding: 0px;
+    width: 50%;
 }
 
-@media screen and (max-width: 500px) {
+.cart {
+    text-align: right;
+    padding: 10px;
+}
+
+.cart:hover {
+    color: gray;
+}
+
+@media screen and (max-width: 540px) {
     p {
         font-size: smaller;
     }
@@ -57,11 +75,21 @@ mat-icon {
 }
 
 @media screen and (max-width: 396px) {
-    mat-icon {
+    .dollar {
         display: none;
     }
+    .cart {
+        height: 50%;
+        margin: 0px;
+        padding: 0px;
+    }
     h1 {
-        font-size: medium;
+        font-size: small;
+        padding: 0px;
+        margin: 0px;
+    }
+    p {
+        font-size: x-small;
         padding: 0px;
         margin: 0px;
     }
