@@ -23,4 +23,34 @@ export class ProductService {
   loadImage(imageUrl: string) {
     return this.storage.ref(imageUrl).getDownloadURL();
   }
+
+  getAll(): Promise<Image[]> {
+    return new Promise((resolve, reject) => {
+      this.afs.collection<Image>(this.collectionName).get().toPromise()
+        .then(querySnapshot => {
+          if (!querySnapshot!.empty) {
+            const images: Image[] = [];
+            querySnapshot!.forEach(doc => {
+              images.push(doc.data() as Image);
+            });
+            resolve(images);
+          } else {
+            // Nincsenek dokumentumok az eredményben
+            resolve([]);
+          }
+        })
+        .catch(error => reject(error));
+    });
+  }
+
+  delete(imageId: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.afs.collection<Image>(this.collectionName).doc(imageId).delete()
+        .then(() => resolve())
+        .catch(error => reject(error));
+    });
+  }
+
+
+
 }

@@ -51,10 +51,10 @@ export class SignupComponent {
           console.log('User added successfully!');
           this.router.navigateByUrl('/main');
         }).catch(error => {
-          console.error(error);
+          //console.error(error);
         })
       }).catch(error => {
-        console.error(error);      
+        //console.error(error);      
       });
     } else {
       alert('Kérlek töltsd ki az összes mezőt érvényes adatokkal!');

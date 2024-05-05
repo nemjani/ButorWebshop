@@ -31,7 +31,7 @@ export class LoginComponent implements OnDestroy {
             this.loading = false;
           })
           .catch(error => {
-            console.error(error);
+            //console.error(error);
             this.loading = false;
             let errorMessage = 'Hibás e-mail vagy jelszó!';
             if (error.code === 'auth/user-not-found') {

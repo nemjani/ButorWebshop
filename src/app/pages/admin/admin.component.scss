@@ -9,3 +9,31 @@ div {
 .main_component {
     height: 100vh;
 }
+
+img {
+    width: 10%;
+    height: 10%;
+}
+
+.mat-cell {
+    width: 25%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.even-row {
+    background-color: rgb(95, 95, 95); /* Szürke háttérszín páros sorokhoz */
+}
+
+.odd-row {
+    background-color: rgba(255, 255, 255, 0); /* Átlátszó háttérszín páratlan sorokhoz */
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+button:hover {
+    background-color: rgb(136, 136, 136);
+}
