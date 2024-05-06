@@ -1,18 +1,28 @@
-div {
+.main_component {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.main_component {
-    height: 100vh;
+.text-container {
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow: auto;
+    max-height: 60vh;
+}
+
+table {
+    width: 100%;
 }
 
 img {
-    width: 10%;
-    height: 10%;
+    max-width: 10%;
+    max-height: 10%;
 }
 
 .mat-cell {
@@ -23,11 +33,11 @@ img {
 }
 
 .even-row {
-    background-color: rgb(95, 95, 95); /* Szürke háttérszín páros sorokhoz */
+    background-color: rgb(95, 95, 95);
 }
 
 .odd-row {
-    background-color: rgba(255, 255, 255, 0); /* Átlátszó háttérszín páratlan sorokhoz */
+    background-color: rgba(255, 255, 255, 0);
 }
 
 button {

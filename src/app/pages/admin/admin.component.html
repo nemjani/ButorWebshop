@@ -1,8 +1,10 @@
 <div class="main_component">
-    <div class="mat-table-container">
+    <div class="text-container">
         <h2>All products:</h2>
         <small>note: csak egyet törölj ki légyszíves, mert nem lehet adni a táblához más terméket és maradjon másnak is
             mit törölni :))</small>
+    </div>
+    <div class="table-container">
         <table mat-table [dataSource]="images" class="mat-elevation-z8">
             <ng-container matColumnDef="image">
                 <th mat-header-cell *matHeaderCellDef>Image</th>
@@ -35,8 +37,8 @@
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let image; columns: displayedColumns;" [ngClass]="{ 'even-row': isEvenRow(image), 'odd-row': !isEvenRow(image) }"></tr>
+            <tr mat-row *matRowDef="let image; columns: displayedColumns;"
+                [ngClass]="{ 'even-row': isEvenRow(image), 'odd-row': !isEvenRow(image) }"></tr>
         </table>
-
     </div>
 </div>
