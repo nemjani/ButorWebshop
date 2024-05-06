@@ -47,3 +47,14 @@ button {
 button:hover {
     background-color: rgb(136, 136, 136);
 }
+
+@media screen and (max-width: 600px) {
+    .table-container table {
+        display: table;
+    }
+
+    .table-container table th:first-child,
+    .table-container table td:first-child {
+        display: none;
+    }
+}
