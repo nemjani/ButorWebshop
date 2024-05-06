@@ -26,7 +26,7 @@ export class ProductService {
 
   getAll(): Promise<Image[]> {
     return new Promise((resolve, reject) => {
-      this.afs.collection<Image>(this.collectionName).get().toPromise()
+      this.afs.collection<Image>(this.collectionName, ref => ref.orderBy('name', 'asc')).get().toPromise()
         .then(querySnapshot => {
           if (!querySnapshot!.empty) {
             const images: Image[] = [];

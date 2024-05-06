@@ -1,3 +1,16 @@
 <div class="main_component">
-    <p>rating works!</p>
+    <div>
+        <mat-icon *ngFor="let index of [1, 2, 3, 4, 5]" (click)="rate(index)"
+            [ngClass]="{'active': isStarActive(index)}">
+            star
+        </mat-icon>
+    </div>
+    <div class="ratings-container">
+        <div *ngIf="userId">
+            <h2>Your Ratings:</h2>
+            <ol>
+                <li *ngFor="let rate of ownRates">{{ rate.rate }}</li>
+            </ol>
+        </div>
+    </div>
 </div>

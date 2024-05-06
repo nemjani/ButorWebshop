@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RatingRoutingModule } from './rating-routing.module';
 import { RatingComponent } from './rating.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { RatingComponent } from './rating.component';
   ],
   imports: [
     CommonModule,
-    RatingRoutingModule
+    RatingRoutingModule,
+    MatIconModule
   ]
 })
 export class RatingModule { }

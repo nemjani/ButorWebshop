@@ -1,5 +1,5 @@
 export interface Rate {
     id: string;
-    name: string;
+    user_id: string;
     rate: number;
 }
